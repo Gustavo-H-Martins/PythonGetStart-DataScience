@@ -16,52 +16,64 @@ while ciclo != 'N':
     if total == 0:
         total = n1
     else:
-        if operador == "+":
+        if "+" in operador:
             total += n1
-        elif operador == "-":
+        elif "-" in operador:
             total -= n1
-        elif operador == "/":
+        elif "/" in operador:
             total /= n1
-        elif operador == "*":
+        elif "*" in operador:
             total *= n1
-        elif operador == "^":
-            var = total ^ n1
-        elif operador == "%":
+        elif "P" in operador:
+            var = total ** n1
+        elif "%" in operador:
+            var = total % n1
     operador = input("Qual o tipo de operação ?"
                      "\n[+] - Adição"
                      "\n[-] - Subtração"
                      "\n[/] - Divisão"
                      "\n[*] - Multiplicação"
-                     "\n[^] - Potência"
+                     "\n[P] - Potência"
                      "\n[%] - Resto de uma divisão"
-                     "\n   :   ").strip()[0]
-    if operador in ["+", "-", "/", "*", "^", "%", ]:
+                     "\n   :   ").strip().upper()[0]
+    if "+" in operador:
+        operador = operador
+    elif "-" in operador:
+        operador = operador
+    elif "/" in operador:
+        operador = operador
+    elif "*" in operador:
+        operador = operador
+    elif "P" in operador:
+        operador = operador
+    elif "%" in operador:
         operador = operador
     else:
         print("Entrada inválida esta operação vai dar erro.")
-        ciclo = "N"
+        break
+
     contador += 1
     n2 += int(input(f' Insira agora o {contador}º número:  '))
-    if operador == "+":
+    if "+" in operador:
         resultado = n1 + n2
         total += n2
-    elif operador == "-":
+    elif "-" in operador:
         resultado = n1 - n2
         total -= n2
-    elif operador == "/":
+    elif "/" in operador:
         resultado = n1 / n2
         total /= n2
-    elif operador == "*":
+    elif "*" in operador:
         resultado = n1 * n2
         total *= n2
-    elif operador == "^":
-        resultado = n1 ^ n2
-        var = total ^ n2
-    elif operador == "%":
+    elif "P" in operador:
+        resultado = n1 ** n2
+        var = total ** n2
+    elif "%" in operador:
         resultado = n1 % n2
         var = total % n2
     else:
-        ciclo = "N"
+        break
     ciclo = input(f'O resultado desta operação até agora é {resultado}, deseja continuar ?'
                   f'\n[S] - Sim'
                   f'\n[N] - Não'

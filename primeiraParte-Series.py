@@ -137,7 +137,6 @@ while continua != "N" :
     Computação vetorizada
     É possível utilizar a tradicional estrutura for … in para iterar sobre
     uma Series (ou seja, para percorrer "de cabo a rabo" o vetor de dados ou o de rótulos):
-
     """
   elif parte == 6 :
     #P06: Iteração

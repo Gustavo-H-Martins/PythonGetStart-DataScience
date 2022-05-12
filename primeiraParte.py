@@ -3,8 +3,27 @@ import pandas as pd
 
 continua = 0
 while continua != "N" :
-  parte = int(input("Escolha qual a parte do código você quer visualizar digite o número referente: \n P01: Olá Series! - [1] \n P02: Propriedades básicas das Series [2] \n : " ))
-  
+  parte = int(input("Escolha qual a parte do código você quer visualizar digite o número referente: "
+                    "\n P01: Olá Series! - [1] "
+                    "\n P02: Propriedades básicas das Series [2] "
+                    "\n P03: Indexação booleana [3] "
+                    "\n P04: Busca em Series [4] "
+                    "\n P05: Inserindo, Alterando e Removendo elementos de Series [5]"
+                    "\n : " ))
+    """
+    Se você aplicar a função type() sobre qualquer Series, sempre
+    receberá como resposta o tipo pandas.core.series.Series . Outra
+    consideração importante é que toda Series está associada a outras
+    propriedades elementares além do dtype . São elas:
+    values : vetor de dados;
+    index : vetor de rótulos;
+    name : nome do vetor de dados;
+    size : tamanho da Series (número de elementos);
+    index.name : nome do vetor de rótulos;
+    index.dtype : dtype do vetor de rótulos.
+    No programa seguinte, apresentamos a forma para trabalhar com
+    essas propriedades.
+    """
   if parte == 1 :  
     #P01: Olá Series!
     #cria a Series notas
@@ -16,6 +35,14 @@ while continua != "N" :
     #imprime as duas Series
     print(notas); print("---------------"); print(alunos)
    
+    """
+    Indexação
+    Utilizamos colchetes [ ] para indexar (acessar e obter) elementos
+    de uma Series. A pandas permite o emprego de três diferentes
+    técnicas: indexação tradicional, fatiamento e indexação booleana.
+    """
+  
+  
   elif parte == 2 :
     #P02: Propriedades básicas das Series
     #cria a Series "alunos"
@@ -59,7 +86,12 @@ while continua != "N" :
     print('relação de alunos aprovados:')
     print('---------------------------')
     print(alunos[indiceAprovados])
-  
+   
+    """
+    Busca
+    O próximo exemplo mostra como verificar se determinados rótulos
+    ou valores estão presentes em uma Series.
+    """"
   elif parte == 4 :
     #P04: Busca em Series
     #cria a Series "alunos"
@@ -75,6 +107,30 @@ while continua != "N" :
     print("existe o valor 'Bob'") 
     print(tem_Bob)
     
+    """
+    Modificação
+    No próximo exemplo, apresentamos a forma básica para inserir,
+    modificar e excluir elementos.
+    """
+  elif parte == 5
+    #P05: Inserindo, Alterando e Removendo elementos de Series
+    #cria a Series "alunos"
+    alunos = pd.Series({'M02':'Bob','M05':'Dayse','M13':'Bill',
+     'M14':'Cris','M19':'Jimi'})
+    print('Series original:')
+    print(alunos)
+    #insere o aluno de matrícula M55, Rakesh
+    alunos['M55'] = 'Rakesh'
+    #altera os nomes Bill, Cris e Jimi para Billy, Cristy e Jimmy
+    alunos['M13'] = 'Billy'
+    alunos[['M14','M19']] = ['Cristy','Jimmy']
+    #remove o aluno de matrícula M02 (Bob)
+    alunos = alunos.drop('M02')
+    print('---------------------------')
+    print('Series após as alterações:')
+    print(alunos)
+
+
   else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()

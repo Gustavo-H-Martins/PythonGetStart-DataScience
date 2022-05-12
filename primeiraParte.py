@@ -10,9 +10,9 @@ while continua != "N" :
     #cria a Series notas
     notas = pd.Series([7.6, 5.0, 8.5, 9.5, 6.4])
     #cria a Series alunos
-    lst_matriculas = ['M02','M05','M13','M14','M19']
-    lst_nomes = ['Bob','Dayse','Bill','Cris','Jimi']
-    alunos = pd.Series(lst_nomes,index=lst_matriculas)
+    listaMatriculas = ['M02','M05','M13','M14','M19']
+    listaNomes = ['Bob','Dayse','Bill','Cris','Jimi']
+    alunos = pd.Series(listaNomes,index=listaMatriculas)
     #imprime as duas Series
     print(notas); print("---------------"); print(alunos)
    
@@ -29,15 +29,16 @@ while continua != "N" :
     tamanho = alunos.size 
     dados = alunos.values 
     rotulos = alunos.index 
-    alunos_tipo = type(alunos) 
-    alunos_dtype = alunos.dtype 
-    alunos_idx_dtype = alunos.index.dtype 
+    alunosTipo = type(alunos) 
+    alunosDtype = alunos.dtype 
+    alunosIdxDtype = alunos.index.dtype 
     print('número de elementos: ', tamanho)
     print('vetor de dados: ', dados)
     print('vetor de rótulos: ', rotulos)
-    print('tipo (type): ', alunos_tipo)
-    print('dtype da Series:', alunos_dtype)
-    print('dtype do vetor de rótulos:', alunos_idx_dtype)
+    print('tipo (type): ', alunosTipo)
+    print('dtype da Series:', alunosDtype)
+    print('dtype do vetor de rótulos:', alunosIdxDtype)
+   
     """
     Para encerrar a subseção, vamos mostrar a indexação
     booleana, a terceira e última técnica para indexar Series. No
@@ -53,13 +54,28 @@ while continua != "N" :
     notas = pd.Series([7.6, 5.0, 8.5, 9.5, 6.4])
     alunos = pd.Series({'M02':'Bob','M05':'Dayse','M13':'Bill','M14':'Cris','M19':'Jimi'})
     #obtém os índices dos alunos aprovados
-    idx_aprovados = notas[notas >= 7].index
+    indiceAprovados = notas[notas >= 7].index
     #imprime os alunos aprovados
     print('relação de alunos aprovados:')
     print('---------------------------')
-    print(alunos[idx_aprovados])
+    print(alunos[indiceAprovados])
+  
+  elif parte == 4 :
+    #P04: Busca em Series
+    #cria a Series "alunos"
+    alunos = pd.Series({'M02':'Bob','M05':'Dayse','M13':'Bill','M14':'Cris','M19':'Jimi'})
+    #testa se rótulos fazem parte de uma Series
+    tem_M13 = 'M13' in alunos
+    tem_M99 = 'M99' in alunos
+    print("existe o rótulo 'M13'? -> ",tem_M13) 
+    print("existe o rótulo 'M99'? -> ",tem_M99) 
+    print('---------------------------')
+    #testa se valor faz parte de uma Series
+    tem_Bob = alunos.isin(['Bob'])
+    print("existe o valor 'Bob'") 
+    print(tem_Bob)
     
-   else :
+  else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()
   

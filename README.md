@@ -11,7 +11,7 @@ flexíveis: Series e DataFrame,
 
 
 
-
+#### Referências do livro : Pandas Python Data Wrangling para Ciência de Dados
 function dev(nome, idade, trabalho) {
         this.nome = nome;
         this.idade = idade;

@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 # Formatação do código para usar cada etapa do desenvolvimento nesta primeira parte
 
 continua = 0
@@ -8,7 +9,9 @@ while continua != "N" :
                     "\n P02: Propriedades básicas das Series [2] "
                     "\n P03: Indexação booleana [3] "
                     "\n P04: Busca em Series [4] "
-                    "\n P05: Inserindo, Alterando e Removendo elementos de Series [5]"
+                    "\n P05: Inserindo, Alterando e Removendo elementos de Series [5] "
+                    "\n #P06: Iteração [6] "
+                    "\n P07: Operações aritméticas com computação vetorizada [7] "
                     "\n : " ))
     """
     Se você aplicar a função type() sobre qualquer Series, sempre
@@ -129,8 +132,58 @@ while continua != "N" :
     print('---------------------------')
     print('Series após as alterações:')
     print(alunos)
+    
+    """
+    Computação vetorizada
+    É possível utilizar a tradicional estrutura for … in para iterar sobre
+    uma Series (ou seja, para percorrer "de cabo a rabo" o vetor de dados ou o de rótulos):
 
-
+    """
+  elif parte == 6 :
+    #P06: Iteração
+    alunos = pd.Series({'M02':'Bob','M05':'Dayse','M13':'Bill',
+        'M14':'Cris','M19':'Jimi'})
+    #itera sobre os dados (nomes dos alunos)
+    for aluno in alunos: print(aluno)
+    #itera sobre os índices (matrículas)
+    for indice in alunos.index: print(indice)
+    """
+    Entretanto, em grande parte das situações práticas, não
+    precisaremos fazer uso desse recurso. Isso porque, em geral, as
+    operações da pandas podem ser executadas através do mecanismo
+    conhecido como computação vetorizada (vectorization). Neste
+    processo, as operações são realizadas sobre cada elemento da
+    Series automaticamente, sem a necessidade de programar um laço
+    com o comando for . Alguns exemplos:
+    Se s é uma Series com valores numéricos, e fazemos s * 2 ,
+    obteremos como resultado uma Series que conterá todos os
+    elementos de s multiplicados por 2.
+    Ao efetuarmos uma soma de duas Series s1 e s2 , teremos
+    como resultado uma nova Series em que o valor de um rótulo
+    (ou índice) i será igual a s1[i] + s2[i] . E da mesma forma
+    ocorrerá para todos os demais rótulos.
+    O programa a seguir demonstra estes conceitos na prática. Uma
+    outra novidade introduzida no exemplo é a importação da biblioteca
+    NumPy e a utilização de um de seus métodos, denominado sqrt()
+    """
+  elif parte == 7 :
+    #P07: Operações aritméticas com computação vetorizada
+    #cria as Series s1 e s2
+    s1 = pd.Series([2,4,6])
+    s2 = pd.Series([1,3,5])
+    print('s1:'); print(s1)
+    print('s2:'); print(s2)
+    #efetua as operações aritméticas
+    print('---------------------------')
+    print('s1 * 2')
+    print(s1 * 2) 
+    print('---------------------------')
+    print('s1 + s2')
+    print(s1 + s2)
+    print('---------------------------')
+    print('raiz quadrada dos elementos de s1')
+    print(np.sqrt(s1)) #com a Numpy!
+    
   else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()

@@ -147,6 +147,7 @@ while continua != "N" :
     for aluno in alunos: print(aluno)
     #itera sobre os índices (matrículas)
     for indice in alunos.index: print(indice)
+      
     """
     Entretanto, em grande parte das situações práticas, não
     precisaremos fazer uso desse recurso. Isso porque, em geral, as

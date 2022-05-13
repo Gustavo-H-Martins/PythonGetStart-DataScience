@@ -95,7 +95,7 @@ while continua != "N" :
     Busca
     O próximo exemplo mostra como verificar se determinados rótulos
     ou valores estão presentes em uma Series.
-    """"
+    """
   elif parte == 4 :
     #P04: Busca em Series
     #cria a Series "alunos"
@@ -116,7 +116,7 @@ while continua != "N" :
     No próximo exemplo, apresentamos a forma básica para inserir,
     modificar e excluir elementos.
     """
-  elif parte == 5
+  elif parte == 5:
     #P05: Inserindo, Alterando e Removendo elementos de Series
     #cria a Series "alunos"
     alunos = pd.Series({'M02':'Bob','M05':'Dayse','M13':'Bill',

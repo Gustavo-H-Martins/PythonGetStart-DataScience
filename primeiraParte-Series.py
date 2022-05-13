@@ -12,6 +12,7 @@ while continua != "N" :
                     "\n P05: Inserindo, Alterando e Removendo elementos de Series [5] "
                     "\n #P06: Iteração [6] "
                     "\n P07: Operações aritméticas com computação vetorizada [7] "
+                    "\n P08: o valor NaN [8] "
                     "\n : " ))
     """
     Se você aplicar a função type() sobre qualquer Series, sempre
@@ -184,6 +185,23 @@ while continua != "N" :
     print('raiz quadrada dos elementos de s1')
     print(np.sqrt(s1)) #com a Numpy!
     
+    """
+    O valor NaN
+    O programa a seguir examina o comportamento da pandas ao
+    realizar uma operação aritmética (soma) envolvendo duas
+    Series que não possuem os rótulos inteiramente compatíveis.
+    """
+  elif parte == 8 :
+    #P08: o valor NaN
+    verde = pd.Series({'BR':1, 'FR': 0, 'IT':1, 'UK': 0})
+    azul = pd.Series({'AR':1, 'BR':1, 'FR': 1, 'IT':0, 'UK': 1})
+    soma = verde + azul
+    print("soma:")
+    print(soma)
+    print('---------------------------')
+    print("isnull(soma):")
+    print(pd.isnull(soma))
+
   else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()

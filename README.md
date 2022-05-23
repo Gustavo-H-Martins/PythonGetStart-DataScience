@@ -1,3 +1,6 @@
+                        #Capa
+                       ![image](https://user-images.githubusercontent.com/70769813/169872288-21ab9b12-cc10-47ca-bff2-b063d79d39d5.png)
+ 
 # Python - Para data wrangling :crystal_ball: :mag_right: :bar_chart: :chart_with_upwards_trend: :chart_with_downwards_trend:
 ## Neste repositório irei tratar a respeito de uma evolução no uso de Python com Pandas, Numpy e Tkinter para manipulação, tratamento e limpeza de dados voltados para análise de dados.
 ### caso você tenha alguma sugestão ou aplicação de melhoria para este repositório sinta-se livre para me auxiliar no desenvolvimento. :bowtie: :smile:

@@ -13,6 +13,8 @@ while continua != "N" :
                     "\n #P06: Iteração [6] "
                     "\n P07: Operações aritméticas com computação vetorizada [7] "
                     "\n P08: o valor NaN [8] "
+                    "\n P09: Índices datetime [9] "
+                    "\n P10: Índexação hierárquica [10] "
                     "\n : " ))
     """
     Se você aplicar a função type() sobre qualquer Series, sempre
@@ -202,6 +204,48 @@ while continua != "N" :
     print("isnull(soma):")
     print(pd.isnull(soma))
 
+    """
+    O programa a seguir mostra como podemos criar essa série
+    temporal, configurando explicitamente o vetor de índices para que
+    ele possua o tipo data ( dtype datetime64 ). Afinal de contas, essa é
+    a semântica correta da nossa série de registro temperaturas!
+    """
+  elif parte == 9 :
+    #P09: Índices datetime
+    import pandas as pd 
+    #(1)-cria a série temporal
+    dias = ['10/02/2019', '11/02/2019','12/02/2019','13/02/2019',
+     '14/02/2019','15/02/2019']
+    temp_max = [31,35,34,28,27,27]
+    serie_temporal = pd.Series(temp_max,index=dias)
+    #(2)-converte o tipo do índice para datetime e imprime a série
+    serie_temporal.index = pd.to_datetime(serie_temporal.index, 
+     format='%d/%m/%Y')
+    print(serie_temporal)  
+    """
+    A indexação hierárquica é um recurso oferecido pela pandas para
+    permitir que você trabalhe com mais de um nível de indexação.
+    Para que o conceito fique claro, o exemplo desta seção mostra
+    como utilizar este recurso para criar uma Series com informações
+    sobre os nomes das moedas dos cinco países mostrados na figura a
+    seguir. Desta vez, a Series poderá ser indexada não apenas pela
+    sigla do país, mas também pelo nome de seu continente.
+    """
+  elif parte == 10 :  
+    #P10: Índexação hierárquica
+    import pandas as pd
+    moedas = ['Peso', 'Real', 'Euro', 'Euro', 'Libra']
+    paises = [['América','América','Europa','Europa','Europa'],
+     ['AR','BR','FR','IT','UK']]
+    paises = pd.Series(moedas, index=paises)
+    print(paises) #imprime toda a Series
+    print('----------------------') 
+    print(paises['América']) #{AR: Peso, BR:Real}
+    print('----------------------') 
+    print(paises[:,'IT']) #{Europa: Euro}
+    print('----------------------') 
+    print(paises['Europa','IT']) #Euro
+    
   else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()

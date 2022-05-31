@@ -16,20 +16,19 @@ while continua != "N" :
                     "\n P09: Índices datetime [9] "
                     "\n P10: Índexação hierárquica [10] "
                     "\n : " ))
-    """
-    Se você aplicar a função type() sobre qualquer Series, sempre
-    receberá como resposta o tipo pandas.core.series.Series . Outra
-    consideração importante é que toda Series está associada a outras
-    propriedades elementares além do dtype . São elas:
-    values : vetor de dados;
-    index : vetor de rótulos;
-    name : nome do vetor de dados;
-    size : tamanho da Series (número de elementos);
-    index.name : nome do vetor de rótulos;
-    index.dtype : dtype do vetor de rótulos.
-    No programa seguinte, apresentamos a forma para trabalhar com
-    essas propriedades.
-    """
+    # Se você aplicar a função type() sobre qualquer Series, sempre
+    # receberá como resposta o tipo pandas.core.series.Series . Outra
+    # consideração importante é que toda Series está associada a outras
+    # propriedades elementares além do dtype . São elas:
+    # values : vetor de dados;
+    # index : vetor de rótulos;
+    # name : nome do vetor de dados;
+    # size : tamanho da Series (número de elementos);
+    # index.name : nome do vetor de rótulos;
+    # index.dtype : dtype do vetor de rótulos.
+    # No programa seguinte, apresentamos a forma para trabalhar com
+    # essas propriedades.
+    
   if parte == 1 :  
     #P01: Olá Series!
     #cria a Series notas

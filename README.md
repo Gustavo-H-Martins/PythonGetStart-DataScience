@@ -5,9 +5,22 @@
 ## Neste repositório irei tratar a respeito de uma evolução no uso de Python com Pandas, Numpy e Tkinter para manipulação, tratamento e limpeza de dados voltados para análise de dados.
 #### Séries
     Em um primeiro momento iremos ver as Estruturas de Dados (ED) Séries (S)
+    Series e a ED pandas básica e
+    fundamental do pacote. Se você pretende utilizar a pandas de forma
+    profissional, é muito importante que você aprenda a trabalhar muito
+    bem com esta ED, compreendendo as suas propriedades e
+    dominando os tipos de operações que podem ser realizadas sobre
+    dados que estejam nela estruturados.
 [Séries](https://github.com/Gustavo-H-Martins/PythonGetStart-DataScience/blob/main/primeiraParte-Series.py)
 #### DataFrames
     Em um segundo momento vamos ver as Estruturas de Dados (ED) DataFrames (DF)
+    DataFrame é a ED pandas utilizada para representar dados
+    tabulares em memória, isto é, dados dispostos em linhas e
+    colunas. Trata-se da ED mais importante para ciência de dados,
+    responsável por disponibilizar um amplo e sofisticado conjunto de
+    métodos para a importação e o pré-processamento de grandes
+    bases de dados.
+
 [DataFrames](https://github.com/Gustavo-H-Martins/PythonGetStart-DataScience/blob/main/segundaParteDataFrames.py)  
 
 ### caso você tenha alguma sugestão ou aplicação de melhoria para este repositório sinta-se livre para me auxiliar no desenvolvimento. :bowtie: :smile:

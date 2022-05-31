@@ -3,6 +3,13 @@
  
 # Python - Para data wrangling :crystal_ball: :mag_right: :bar_chart: :chart_with_upwards_trend: :chart_with_downwards_trend:
 ## Neste repositório irei tratar a respeito de uma evolução no uso de Python com Pandas, Numpy e Tkinter para manipulação, tratamento e limpeza de dados voltados para análise de dados.
+#### Séries
+    Em um primeiro momento iremos ver as Estruturas de Dados (ED) Séries (S)
+[Séries](https://github.com/Gustavo-H-Martins/PythonGetStart-DataScience/blob/main/primeiraParte-Series.py)
+#### DataFrames
+    Em um segundo momento vamos ver as Estruturas de Dados (ED) DataFrames (DF)
+[DataFrames](https://github.com/Gustavo-H-Martins/PythonGetStart-DataScience/blob/main/segundaParteDataFrames.py)  
+
 ### caso você tenha alguma sugestão ou aplicação de melhoria para este repositório sinta-se livre para me auxiliar no desenvolvimento. :bowtie: :smile:
 # Pandas 🐼 🐼 🐼 🐼
 ### A biblioteca pandas torna o processo de manipulação de dados

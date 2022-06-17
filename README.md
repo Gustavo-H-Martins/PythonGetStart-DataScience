@@ -56,5 +56,5 @@ function dev(nome, idade, trabalho) {
         this.idade = idade;
         this.trabalho = trabalho;
       }
-      let MartinsLopes = new dev('Gustavo Martins Lopes', 29, 'Técnico de Implantação de Softwares - Aspirante a Desenvolvedor');
+      let MartinsLopes = new dev('Gustavo Martins Lopes', 29, 'Analista de Dados - Aspirante a Desenvolvedor');
       console.log(MartinsLopes);

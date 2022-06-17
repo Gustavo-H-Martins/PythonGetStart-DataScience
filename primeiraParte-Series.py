@@ -211,7 +211,7 @@ while continua != "N" :
     """
   elif parte == 9 :
     #P09: Índices datetime
-    import pandas as pd 
+    
     #(1)-cria a série temporal
     dias = ['10/02/2019', '11/02/2019','12/02/2019','13/02/2019',
      '14/02/2019','15/02/2019']
@@ -232,7 +232,7 @@ while continua != "N" :
     """
   elif parte == 10 :  
     #P10: Índexação hierárquica
-    import pandas as pd
+    
     moedas = ['Peso', 'Real', 'Euro', 'Euro', 'Libra']
     paises = [['América','América','Europa','Europa','Europa'],
      ['AR','BR','FR','IT','UK']]

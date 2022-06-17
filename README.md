@@ -23,7 +23,8 @@
 
 [DataFrames](https://github.com/Gustavo-H-Martins/PythonGetStart-DataScience/blob/main/segundaParteDataFrames.py)  
 ![Shape](https://user-images.githubusercontent.com/70769813/174393622-ec152b10-eb8e-403c-96fb-0d480e2a176f.jpg)
-                                    ###O que é Shape
+
+  ###O que é Shape
 ### caso você tenha alguma sugestão ou aplicação de melhoria para este repositório sinta-se livre para me auxiliar no desenvolvimento. :bowtie: :smile:
 # Pandas 🐼 🐼 🐼 🐼
 ### A biblioteca pandas torna o processo de manipulação de dados

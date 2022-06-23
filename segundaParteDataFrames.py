@@ -47,9 +47,9 @@ while continua != "N" :
     print(paises)
 
     if parte == 12 : 
-    #P12: Propriedades básicas dos DataFrames
+      #P12: Propriedades básicas dos DataFrames
 
-    #cria o DataFrame
+      #cria o DataFrame
       dados = {'nome': ['Argentina','Brasil','França','Itália',
      'Reino Unido'],
      'continente': ['América','América','Europa','Europa',
@@ -75,6 +75,47 @@ while continua != "N" :
       print('dtypes das colunas:\n', paises_dtypes)
       print('dtype dos rótulos das linhas:', paises_idx_dtype) 
       
+      """
+      Com relação ao tipo de objeto retornado,
+      temos que o resultado do fatiamento de um DataFrame será sempre
+      um objeto do tipo DataFrame, exceto quando a operação resultar
+      em uma única linha ou uma única coluna retornada. Neste caso, o
+      tipo de objeto resultante é uma Series.
+      Utilizamos colchetes [ ] para indexar elementos de um DataFrame.
+      Assim como ocorre com as Series, é possível empregar três
+      técnicas de indexação: indexação tradicional, fatiamento e
+      indexação booleana. 
+      """
+
+    if parte == 12 :
+      #P13: Busca em DataFrames
+      #cria o DataFrame
+      dados = {'nome': ['Argentina','Brasil','França','Itália',
+       'Reino Unido'],
+       'continente': ['América','América','Europa','Europa',
+       'Europa'],
+       'extensao': [2780,8511,644,301,244],
+       'corVerde': [0,1,0,1,0]}
+      siglas = ['AR','BR','FR','IT','UK']
+      paises = pd.DataFrame(dados,index=siglas)
+      #testa se um dado rótulo de linha existe
+      tem_BR = 'BR' in paises.index
+      tem_US = 'US' in paises.index
+      print("existe o rótulo 'BR? -> ",tem_BR) 
+      print("existe o rótulo 'US'? -> ",tem_US) 
+      print('---------------------------')
+      #testa se um dado rótulo de coluna existe
+      tem_corVerde = 'corVerde' in paises.columns
+      tem_corAzul = 'corAzul' in paises.columns
+      print("existe o rótulo 'corVerde? -> ",tem_corVerde) 
+      print("existe o rótulo 'corAzul'? -> ",tem_corAzul) 
+      print('---------------------------')
+      #testa se valor faz parte de uma coluna
+      tem_Brasil = paises['nome'].isin(['Brasil'])
+      print("existe o valor 'Brasil' na coluna 'nome'?") 
+      print(tem_Brasil)
+
+    
     else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()

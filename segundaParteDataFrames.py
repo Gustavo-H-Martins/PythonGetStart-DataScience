@@ -114,8 +114,50 @@ while continua != "N" :
       tem_Brasil = paises['nome'].isin(['Brasil'])
       print("existe o valor 'Brasil' na coluna 'nome'?") 
       print(tem_Brasil)
-
-    
+      
+      """
+      Para verificar se um rótulo de linha ou de coluna existe em um
+      DataFrame, você deve aplicar o operador in sobre a lista de rótulos
+      de linha ou de colunas, respectivamente (propriedades index e
+      columns ).
+      Se você quiser testar se um valor está armazenado em uma coluna,
+      precisará utilizar o método isin() . Em nosso exemplo, passamos
+      para o método uma lista com um único elemento ( 'Brasil' ) e
+      mandamos checar a coluna nome . Como resultado, o método indicará
+      True para a sigla BR .
+      O próximo programa mostra:
+      1. Como verificar se um determinado rótulo de linha ou coluna
+      existe em um DataFrame;
+      2. Como verificar se um determinado valor está armazenado em
+      alguma coluna do DataFrame.
+      """
+    if parte == 13 :
+      #P13: Busca em DataFrames
+      import pandas as pd
+      #cria o DataFrame
+      dados = {'nome': ['Argentina','Brasil','França','Itália',
+       'Reino Unido'],
+       'continente': ['América','América','Europa','Europa',
+       'Europa'],
+       'extensao': [2780,8511,644,301,244],
+       'corVerde': [0,1,0,1,0]}
+      siglas = ['AR','BR','FR','IT','UK']
+      paises = pd.DataFrame(dados,index=siglas)
+      #testa se um dado rótulo de linha existe
+      tem_BR = 'BR' in paises.index
+      tem_US = 'US' in paises.index
+      print("existe o rótulo 'BR? -> ",tem_BR)
+      print("existe o rótulo 'US'? -> ",tem_US)
+      print('---------------------------')
+      #testa se um dado rótulo de coluna existe
+      tem_corVerde = 'corVerde' in paises.columns
+      tem_corAzul = 'corAzul' in paises.columns
+      print("existe o rótulo 'corVerde? -> ",tem_corVerde)
+      print("existe o rótulo 'corAzul'? -> ",tem_corAzul)
+      print('---------------------------')
+      #testa se valor faz parte de uma coluna
+      tem_Brasil = paises['nome'].isin(['Brasil'])
+      
     else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()

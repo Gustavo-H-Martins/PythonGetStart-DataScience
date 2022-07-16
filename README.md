@@ -22,8 +22,19 @@
     bases de dados.
 
 [DataFrames](https://github.com/Gustavo-H-Martins/PythonGetStart-DataScience/blob/main/segundaParteDataFrames.py)  
+### O que é Shape
 ![Shape](https://user-images.githubusercontent.com/70769813/174393622-ec152b10-eb8e-403c-96fb-0d480e2a176f.jpg)
-    que é Shape
+
+### Algumas observações importantes:
+    No vocabulário adotado pela pandas, o termo index é sempre
+    utilizado para índices das linhas, enquanto o termo column é
+    utilizado para os índices das colunas.
+    Não esqueça que a primeira coluna está na posição 0, a
+    segunda, na posição 1 etc. Da mesma forma, a primeira linha
+    está na posição 0, a segunda, na posição 1 etc.
+    O fatiamento de DataFrames pode ser realizado com o uso dos
+    métodos iloc() (por posição) e loc() (por rótulo).
+
     
 ### caso você tenha alguma sugestão ou aplicação de melhoria para este repositório sinta-se livre para me auxiliar no desenvolvimento. :bowtie: :smile:
 # Pandas 🐼 🐼 🐼 🐼

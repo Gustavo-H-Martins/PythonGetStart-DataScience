@@ -6,9 +6,9 @@ continua = 0
 while continua != "N" :
   parte = int(input("Escolha qual a parte do código você quer visualizar digite o número referente: "
                     "\n P11: Hello DataFrame! [11] "
-                    "\n P12: Propriedades básicas dos DataFrames[13] "
+                    "\n P12: Propriedades básicas dos DataFrames[12] "
                     "\n P13: Busca em DataFrame [13] "
-                    "\n "
+                    "\n P14: Modificação de DataFrame [14] "
                     "\n "
                     "\n "
                     "\n "
@@ -133,7 +133,7 @@ while continua != "N" :
       """
     if parte == 13 :
       #P13: Busca em DataFrames
-      import pandas as pd
+      
       #cria o DataFrame
       dados = {'nome': ['Argentina','Brasil','França','Itália',
        'Reino Unido'],
@@ -157,7 +157,48 @@ while continua != "N" :
       print('---------------------------')
       #testa se valor faz parte de uma coluna
       tem_Brasil = paises['nome'].isin(['Brasil'])
-      
+    
+    """
+    Modificação
+    Este tópico apresenta as técnicas básicas para inserir e alterar
+    linhas de um DataFrame e para modificar o conteúdo de alguma
+    célula.
+    Para inserir o Japão, basta indicar os dados desse país em um
+    dicionário e realizar a atribuição com o uso do método loc() .
+    Caso o DataFrame não possua rótulos de linha, será preciso
+    utilizar o método iloc() com o índice da linha a ser inserida.
+    Para alterar uma célula, no caso, a extensão do Brasil, utiliza se um comando de atribuição simples que emprega o método
+    at() com a indicação dos rótulos de linha e coluna da célula a
+    ser alterada. Caso o DataFrame não possua rótulos de linha,
+    será preciso utilizar o método iat() com o índice da linha a ser
+    alterada.
+    Por fim, para remover linhas, basta utilizar o método drop()
+    indicando a lista de rótulos de linha a serem removidos.
+    """
+    
+    if parte == 14 :
+      #P14: Modificação de DataFrame
+      #cria o DataFrame
+      dados = {'nome': ['Argentina','Brasil','França','Itália',
+       'Reino Unido'],
+       'continente': ['América','América','Europa','Europa',
+       'Europa'],
+       'extensao': [2780,8511,644,301,244],
+       'corVerde': [0,1,0,1,0]}
+      siglas = ['AR','BR','FR','IT','UK']
+      paises = pd.DataFrame(dados,index=siglas)
+      #insere o país Japão (JP)
+      paises.loc['JP']= {'nome': 'Japão',
+       'continente': 'Ásia',
+       'extensao': 372,
+       'corVerde': 0}
+      #altera a extensão do Brasil
+      paises.at['BR','extensao']=8512
+      #remove a Argentina e o Reino Unido
+      paises = paises.drop(['AR','UK'])
+      print('DataFrame após as alterações:')
+      print(paises)
+
     else :
     break
   continua = input("Deseja continuar visualizando as partes ? \n [S] - Sim \n [N] - Não \n : ").upper().strip()
